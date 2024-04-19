@@ -1,0 +1,116 @@
+<%- include("partials/header.ejs") %>
+
+<h1 class="card hero">BLOGPOST</h1>
+
+<div class="card featuresDiv">
+    <div class="featureCard popularPosts">
+        <h2>MOST POPULAR</h2>
+        <h5>by: Carlston Rebelo</h5>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+        
+    </div>
+    <div class="featureCard featuredPosts">
+        <h2>FEATURED</h2>
+        <h5>by: Carlston Rebelo</h5>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
+    
+    </div>
+</div>
+
+<!-- <% if (locals.submitted) { %>
+    <% setTimeout(function(){%>
+        <h3 class="success"><%= submitted %></h3>
+    <%},1000)%>
+<% } else { %>
+    <h3></h3>
+<% } %> -->
+
+<a href="/blog" class="btn blogBTN"><h2>BLOG</h2></a>
+
+<div class="card mainDiv">
+    <div class="recentPosts">
+        <h2>BLOG</h2>
+        <div class="recentPostContainer">
+            <div class="post">
+                <h3><%= title %> <span><%=date%></span></h3>
+                <p><%= descrip %></p>
+                <p><%= body %></p>
+                <div class="edit-post">
+                    <button>Edit</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="form-container">
+            <form action="/submit" method="POST">
+                
+                <label for="title" class="first">Title:</label>
+                
+                <input type="text" name="title" placeholder="Name your work" required class="second" >
+                
+                <label for="author" class="third">Author Name:</label>
+                
+                <input type="text" name="author" placeholder="Your Name / Alias" required class="fourth">
+                
+                <label for="description" class="fifth">Brief Description:</label>
+                
+                <input type="text" name="description" placeholder="What are your writing about" required class="sixth" spellcheck>
+                
+                <label for="body" class="seventh">Your Blog:</label>
+                
+                <textarea name="body" placeholder="What's on your mind" required class="eight" spellcheck></textarea>
+                
+                <label for="date" class="ninth">Date:</label>
+                
+                <input type="date" name="date" required class="tenth">
+                
+                <select name="topic" id="topicSelection" required class="eleventh">
+                    <option value="">Select Topic</option>
+                    <option value="art">Art</option>
+                    <option value="buisness">Business</option>
+                    <option value="culture">Culture</option>
+                    <option value="education">Education</option>
+                    <option value="family">Family</option>
+                    <option value="finance">Finance</option>
+                    <option value="food">Food</option>
+                    <option value="games">Games</option>
+                    <option value="health">Health</option>
+                    <option value="media">Media</option>
+                    <option value="nature">Nature</option>
+                    <option value="pets">Pets</option>
+                    <option value="relationship">Relationship</option>
+                    <option value="religion">Religion</option>
+                    <option value="sports">Sports</option>
+                    <option value="technology">Technology</option>
+                    <option value="world">World</option>
+                </select>
+                
+                <div class="twelfth"><input type="submit" value="PUBLISH"></div>
+            </form> 
+        </div> -->
+    </div>
+    <div class="topics">
+        <h3>TOPICS</h3>
+        <ul>
+            <li><a href="/art">Art</a></li>
+            <li><a href="/business">Business</a></li>
+            <li><a href="/culture">Culture</a></li>
+            <li><a href="/education">Education</a></li>
+            <li><a href="/family">Family</a></li>
+            <li><a href="/finance">Finance</a></li>
+            <li><a href="/food">Food</a></li>
+            <li><a href="/games">Games</a></li>
+            <li><a href="/health">Health</a></li>
+            <li><a href="/media">Media</a></li>
+            <li><a href="/nature">Nature</a></li>
+            <li><a href="/pets">Pets</a></li>
+            <li><a href="/relationship">Relationship</a></li>
+            <li><a href="/religion">Religion</a></li>
+            <li><a href="/sports">Sports</a></li>
+            <li><a href="/technology">Technology</a></li>
+            <li><a href="/world">World</a></li>
+        </ul>
+    </div>
+</div>
+
+<%- include("partials/footer.ejs") %>

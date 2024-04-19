@@ -1,0 +1,7 @@
+.post h3 {
+    font-size: 26px;
+}
+
+h3 > span {
+    font-size: 16px;
+}

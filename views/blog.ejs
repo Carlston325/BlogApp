@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs") %>
+
+<h1>BLOG IT</h1>
+<form action="/submit" method="POST">
+    <!-- 1 -->
+    <label for="title" class="first">Title:</label>
+    <!-- 2 -->
+    <input type="text" name="title" placeholder="Name your work" required class="second">
+    <!-- 3 -->
+    <label for="author" class="third">Author Name:</label>
+    <!-- 4 -->
+    <input type="text" name="author" placeholder="Your Name / Alias" required class="fourth">
+    <!-- 5 -->
+    <label for="description" class="fifth">Brief Description:</label>
+    <!-- 6 -->
+    <input type="text" name="description" placeholder="What are your writing about" required class="sixth">
+    <!-- 7 -->
+    <label for="body" class="seventh">Your Blog:</label>
+    <!-- 8 -->
+    <textarea name="body" placeholder="What's on your mind" required class="eight"></textarea>
+    <!-- 9 -->
+    <label for="date" class="ninth">Date:</label>
+    <!-- 10 -->
+    <input type="date" name="date" required class="tenth">
+    <!-- 11 -->
+    <select name="topic" id="topicSelection" required class="eleventh">
+        <option value="">Select Topic</option>
+        <option value="art">Art</option>
+        <option value="buisness">Business</option>
+        <option value="culture">Culture</option>
+        <option value="education">Education</option>
+        <option value="family">Family</option>
+        <option value="finance">Finance</option>
+        <option value="food">Food</option>
+        <option value="games">Games</option>
+        <option value="health">Health</option>
+        <option value="media">Media</option>
+        <option value="nature">Nature</option>
+        <option value="pets">Pets</option>
+        <option value="relationship">Relationship</option>
+        <option value="religion">Religion</option>
+        <option value="sports">Sports</option>
+        <option value="technology">Technology</option>
+        <option value="world">World</option>
+    </select>
+    <!-- 12 -->
+    <div class="twelfth"><input type="submit" value="PUBLISH"></div>
+</form> 
+
+<%- include("partials/footer.ejs") %>
