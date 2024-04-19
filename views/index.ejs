@@ -3,45 +3,66 @@
 <h1 class="card hero">BLOGPOST</h1>
 
 <div class="card featuresDiv">
-    <div class="featureCard popularPosts">
-        <h2>MOST POPULAR</h2>
-        <h5>by: Carlston Rebelo</h5>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-        
-    </div>
-    <div class="featureCard featuredPosts">
-        <h2>FEATURED</h2>
-        <h5>by: Carlston Rebelo</h5>
-        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,</p>
-    
-    </div>
+  <div class="featureCard popularPosts">
+    <h2>MOST POPULAR</h2>
+    <h5>by: Carlston Rebelo</h5>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries,
+    </p>
+  </div>
+  <div class="featureCard featuredPosts">
+    <h2>FEATURED</h2>
+    <h5>by: Carlston Rebelo</h5>
+    <p>
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+      Lorem Ipsum has been the industry's standard dummy text ever since the
+      1500s, when an unknown printer took a galley of type and scrambled it to
+      make a type specimen book. It has survived not only five centuries,
+    </p>
+  </div>
 </div>
-
-<!-- <% if (locals.submitted) { %>
-    <% setTimeout(function(){%>
-        <h3 class="success"><%= submitted %></h3>
-    <%},1000)%>
-<% } else { %>
-    <h3></h3>
-<% } %> -->
 
 <a href="/blog" class="btn blogBTN"><h2>BLOG</h2></a>
 
+<% if (locals.isSubmitted) { %>
+<h3 class="success">SUCCESS</h3>
+<%}%>
+
 <div class="card mainDiv">
-    <div class="recentPosts">
-        <h2>BLOG</h2>
-        <div class="recentPostContainer">
-            <div class="post">
-                <h3><%= title %> <span><%=date%></span></h3>
-                <p><%= descrip %></p>
-                <p><%= body %></p>
-                <div class="edit-post">
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </div>
-            </div>
+  <div class="recentPosts">
+    <h2>BLOGS</h2>
+    <div class="recentPostContainer">
+      <%if (locals.recentPost && locals.data){%> <%const blogs =
+      data.filter((blog)=> blog.id !== recentPost.id )%>
+      <div class="post">
+        <h3><%= recentPost.title %> <span><%=recentPost.date%></span></h3>
+        <p><%= recentPost.descrip %></p>
+        <p><%= recentPost.body %></p>
+        <div class="edit-post">
+          <button>Edit</button>
+          <button>Delete</button>
         </div>
-        <!-- <div class="form-container">
+      </div>
+
+      <% blogs.map(blog=>{ %>
+      <div class="post">
+        <h3><%= blog.title %> <span><%=blog.date%></span></h3>
+        <p><%= blog.description %></p>
+        <p><%= blog.body %></p>
+        <div class="edit-post">
+          <button>Edit</button>
+          <button method="/delete">Delete</button>
+        </div>
+      </div>
+      <%})%> <%} else {%>
+      <p>{locals.error}</p>
+      <%}%>
+    </div>
+  </div>
+  <!-- <div class="form-container">
             <form action="/submit" method="POST">
                 
                 <label for="title" class="first">Title:</label>
@@ -88,29 +109,28 @@
                 <div class="twelfth"><input type="submit" value="PUBLISH"></div>
             </form> 
         </div> -->
-    </div>
-    <div class="topics">
-        <h3>TOPICS</h3>
-        <ul>
-            <li><a href="/art">Art</a></li>
-            <li><a href="/business">Business</a></li>
-            <li><a href="/culture">Culture</a></li>
-            <li><a href="/education">Education</a></li>
-            <li><a href="/family">Family</a></li>
-            <li><a href="/finance">Finance</a></li>
-            <li><a href="/food">Food</a></li>
-            <li><a href="/games">Games</a></li>
-            <li><a href="/health">Health</a></li>
-            <li><a href="/media">Media</a></li>
-            <li><a href="/nature">Nature</a></li>
-            <li><a href="/pets">Pets</a></li>
-            <li><a href="/relationship">Relationship</a></li>
-            <li><a href="/religion">Religion</a></li>
-            <li><a href="/sports">Sports</a></li>
-            <li><a href="/technology">Technology</a></li>
-            <li><a href="/world">World</a></li>
-        </ul>
-    </div>
+  <div class="topics">
+    <h3>TOPICS</h3>
+    <ul>
+      <li><a href="/art">Art</a></li>
+      <li><a href="/business">Business</a></li>
+      <li><a href="/culture">Culture</a></li>
+      <li><a href="/education">Education</a></li>
+      <li><a href="/family">Family</a></li>
+      <li><a href="/finance">Finance</a></li>
+      <li><a href="/food">Food</a></li>
+      <li><a href="/games">Games</a></li>
+      <li><a href="/health">Health</a></li>
+      <li><a href="/media">Media</a></li>
+      <li><a href="/nature">Nature</a></li>
+      <li><a href="/pets">Pets</a></li>
+      <li><a href="/relationship">Relationship</a></li>
+      <li><a href="/religion">Religion</a></li>
+      <li><a href="/sports">Sports</a></li>
+      <li><a href="/technology">Technology</a></li>
+      <li><a href="/world">World</a></li>
+    </ul>
+  </div>
 </div>
 
 <%- include("partials/footer.ejs") %>
